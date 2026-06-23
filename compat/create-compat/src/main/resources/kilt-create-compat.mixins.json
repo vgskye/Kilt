@@ -7,7 +7,9 @@
         "colorwheel.ColorwheelMixin",
         "flywheel.BakedModelBuffererMixin",
         "flywheel.FabricMeshEmitterManagerAccessor",
-        "flywheel.FlywheelBackendXplatImplMixin"
+        "flywheel.FlywheelBackendXplatImplMixin",
+        "ponder.FluidRenderHelperMixin",
+        "ponder.NeoForgeCatnipServicesMixin"
     ],
     "client": [
     ],

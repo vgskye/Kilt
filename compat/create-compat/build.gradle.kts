@@ -19,6 +19,9 @@ dependencies {
 
     modCompileOnly("maven.modrinth:colorwheel:${property("colorwheel_version")}-fabric,1.21.1")
     modCompileOnly("maven.modrinth:BzHgFoGz:${property("colorwheel_version")}-neoforge,1.21.1") // Colorwheel Neo
+
+    modCompileOnly("net.createmod.ponder:ponder-fabric:${property("ponder_version")}+mc1.21.1")
+    modCompileOnly("net.createmod.ponder:ponder-neoforge:${property("ponder_version")}+mc1.21.1")
 }
 
 loom {
