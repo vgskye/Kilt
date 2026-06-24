@@ -304,6 +304,23 @@ object KiltMixinModifications {
                 )
             )
         ),
+
+        // Fixes Psi's ParticleEngineMixin
+        InjectedShareAccessModifier(
+            owner = "net/minecraft/client/particle/ParticleEngine",
+            methods = listOf("render(Lnet/minecraft/client/renderer/LightTexture;Lnet/minecraft/client/Camera;FLnet/minecraft/client/renderer/culling/Frustum;Ljava/util/function/Predicate;)V"),
+            paramToShareMapping = mapOf(
+                ParamPair("Lnet/minecraft/client/renderer/culling/Frustum;", 0) to Share("frustum", namespace = Kilt.MOD_ID),
+                ParamPair("Ljava/util/function/Predicate;", 0) to Share("renderTypePredicate", namespace = Kilt.MOD_ID),
+            )
+        ),
+
+        // Goes along with the above
+        NameRemappingAnnotationModifier(
+            owner = "net/minecraft/client/particle/ParticleEngine",
+            methods = listOf("render(Lnet/minecraft/client/renderer/LightTexture;Lnet/minecraft/client/Camera;FLnet/minecraft/client/renderer/culling/Frustum;Ljava/util/function/Predicate;)V"),
+            remapMethodsTo = listOf("render(Lnet/minecraft/client/renderer/LightTexture;Lnet/minecraft/client/Camera;F)V")
+        ),
     )
 
     val MODIFY_VARIABLE = register(
